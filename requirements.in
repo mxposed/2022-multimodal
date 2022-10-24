@@ -1,0 +1,15 @@
+muon
+scanpy
+scvi-tools
+matplotlib
+seaborn
+torch-1.12.1+cu113-cp39-cp39-linux_x86_64.whl;sys_platform=="linux"
+scikit-misc
+jupyterlab
+hdf5plugin
+leidenalg
+scanpy-utils
+dm-haiku
+catboost
+kaggle
+
