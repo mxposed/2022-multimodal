@@ -58,12 +58,14 @@ Exploratory analysis:
 TBD
 
 AE-based models:
+
 1. `10_atac_models`: train AE model per each chromosome, save models and latent dimensions
 2. `11_atac_apply`: apply AE models to test data for each chromosome to get latent dimensions
 3. `12_atac_predict`: train catboost models on train latent dimensions to predict mRNA levels
 4. `13_atac_ae_explore`: explore AE training behaviour with changed in latent dimensions
 
 Truncated SVD-based models:
+
 1. `20_atac_models`: fit Truncated SVD per each chromosome, save top dimensions
 2. `21_atac_apply`: apply SVD models per each chromosome to test data, save latent dimensions
 3. `12_atac_predict`: train catboost models to predict mRNA from top SVD dimensions per chromosome
