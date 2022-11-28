@@ -54,7 +54,7 @@ I use GPU nodes on Quest like this:
 
 ## ATAC-seq analysis/predictions
 
-Exploratory analysis: \\
+Exploratory analysis:  
 TBD
 
 AE-based models:
