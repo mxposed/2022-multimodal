@@ -4,6 +4,7 @@ scvi-tools
 matplotlib
 seaborn
 torch-1.12.1+cu113-cp39-cp39-linux_x86_64.whl;sys_platform=="linux"
+jaxlib-0.3.20+cuda11.cudnn82-cp39-cp39-manylinux2014_x86_64.whl;sys_platform=="linux"
 scikit-misc
 jupyterlab
 hdf5plugin

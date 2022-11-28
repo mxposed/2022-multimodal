@@ -161,8 +161,9 @@ jax==0.3.21
     #   numpyro
     #   optax
     #   scvi-tools
-jaxlib==0.3.20
+jaxlib @ file:///projects/b1038/Pulmonary/nmarkov/2022-multimodal/code/jaxlib-0.3.20%2Bcuda11.cudnn82-cp39-cp39-manylinux2014_x86_64.whl ; sys_platform == "linux"
     # via
+    #   -r requirements.in
     #   chex
     #   numpyro
     #   optax

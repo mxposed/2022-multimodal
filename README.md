@@ -1,6 +1,13 @@
 # Environment setup
 
 This project uses python 3.9. The dependencies are managed with pip-tools.
+
+`requirements.in` file specifies packages needed by the project, with optional pins.
+
+`requirements.txt` file records all resolved dependencies for the specified packages.
+
+# Environment setup without GPU
+
 To recreate the virtual environment:
 
 1. Create virtual environment: `python -mvenv venv`
@@ -8,7 +15,33 @@ To recreate the virtual environment:
 3. Install `pip-tools`: `pip install pip-tools`
 4. Install dependencies: `pip-sync`
 
-During step 4 you might need to provide some external dependencies / activate modules on quest.
+## Environment setup on Quest with GPU
+
+To enable support for GPU on Quest, I used 2 manually downloaded prebuilt python extensions: torch and jax, which I placed in the current root project directory.
+
+To get them:
+
+`wget "https://download.pytorch.org/whl/cu113/torch-1.12.1%2Bcu113-cp39-cp39-linux_x86_64.whl"`
+
+`wget "https://storage.googleapis.com/jax-releases/cuda11/jaxlib-0.3.20+cuda11.cudnn82-cp39-cp39-manylinux2014_x86_64.whl"`
+
+Then:
+
+1. Create virtual environment: `python -mvenv venv`
+2. Activate it: `source venv/bin/activate`
+3. Install `pip-tools`: `pip install pip-tools`
+4. Compile dependencies with the downloaded wheels: `pip-compile`
+5. Check that only these files changed in `requirements.txt`: `git diff requirements.txt`
+6. Install dependencies: `pip-sync`
+
+After that, before launching `jupyter` or scripts, run `module load cuda/11.2.1-intel-19.0.5.281`
+
+I use GPU nodes on Quest like this:
+1. Schedule an interactive job on a node with GPU and enough memory (>150G)
+2. Activate environment there
+3. Launch jupyter lab
+4. Use ssh port forwarding to connect my localhost port to GPU node port 8888
+5. Open browser for the localhost port
 
 # Contents
 
